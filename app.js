@@ -29,9 +29,22 @@ const promptUser = () => {
             }
         },
         {
+            type: 'confirm',
+            name: 'confirmAbout', 
+            message: 'Would you like to share some information about yourself for an "About" section?',
+            default: true
+        },
+        {
             type: 'input',
             name: 'about',
-            message: 'Please tell us a few things about you: '
+            message: 'Please tell us a few things about you: ',
+            when: ({confirmAbout}) => {
+                if(confirmAbout) {
+                    return true;
+                } else {
+                  return false;  
+                }
+            }
         }
     ]);
 };
