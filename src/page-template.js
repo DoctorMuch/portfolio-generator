@@ -27,7 +27,7 @@ const generateProjects = projectsArr => {
                             ${languages.join(', ')}
                         </h5>
                         <p>${description}</p>
-                        <a href="${link}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+                        <a href="https://github.com${header.github}${link}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
                     </div>
                     `;
                 })
@@ -55,17 +55,15 @@ const generateProjects = projectsArr => {
 };
 
 module.exports = templateData => {
-    console.log(templateData);
     
     const { projects, about, ...header} = templateData;
 
     return `
     <!DOCTYPE html>
     <html lang="en">
-    
     <head> 
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"?
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Portfolio Demo</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
